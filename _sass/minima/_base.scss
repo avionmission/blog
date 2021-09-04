@@ -14,7 +14,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family; 
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -106,12 +106,13 @@ a {
   color: $brand-color;
   text-decoration: none;
 
-  &:visited {
-    color: darken($brand-color, 15%);
-  }
+  // &:visited {
+  //  color: darken($brand-color, 15%);
+  // }
 
   &:hover {
-    color: $text-color;
+    // color: $text-color;
+    color: aquamarine;
     text-decoration: underline;
   }
 
@@ -151,7 +152,8 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  background-color: #eef;
+  // background-color: #eef;
+  background-color: #1D1F20;
 }
 
 code {
