@@ -44,6 +44,10 @@
     &:not(:last-child) {
       margin-right: 20px;
     }
+
+    &:hover{
+      color: aquamarine;
+    }
   }
 
   @include media-query($on-palm) {
