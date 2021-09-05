@@ -25,6 +25,22 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
+        <div class="post-categories" style="margin: 3% 0%;">
+          {% if post %}
+            {% assign categories = post.categories %}
+          {% else %}
+            {% assign categories = page.categories %}
+          {% endif %}
+          {% for category in categories %}
+          <a href="{{site.baseurl}}/categories/#{{category|slugize}}" style="border: 2px solid; border-radius: 8px; border-color:cadetblue; color:cadetblue; font-size: small; padding: 3px;" class="tags">{{category}}</a>
+          {% unless forloop.last %}&nbsp;{% endunless %}
+          {% endfor %}
+        </div>
+
+      {% if post.image %}
+      <img src="{{site.baseurl}}/{{ post.image }}" style="margin-bottom: 2%;">
+      {% endif %}
+
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}

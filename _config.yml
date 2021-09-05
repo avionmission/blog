@@ -24,6 +24,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my blog.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://avionmission.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+permalink: /:title/
+
 twitter_username: avionmission
 github_username:  avionmission
 linkedin_username: avionmission
@@ -35,6 +38,8 @@ title-logo: /images/title-logo.png
 author: Avinash Prasad
 
 copyright: Avinash Prasad
+
+show_excerpts: true
 
 # Build settings
 # [Removed minima theme as it is now a regular theme.]

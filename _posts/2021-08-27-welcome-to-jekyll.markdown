@@ -2,7 +2,9 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2021-08-27 09:00:43 +0530
+image: images/welcome_to_jekyll.png
 categories: jekyll update
+excerpt: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 ---
 <img src="https://github.com/avionmission/blog/blob/main/images/3%20Color%20Grading%20Hacks%20in%20Alight%20Motion%20thmb.png?raw=true">
 
