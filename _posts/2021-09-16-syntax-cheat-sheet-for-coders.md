@@ -2,7 +2,7 @@
 layout: post
 title:  "Ultimate Syntax CheatSheet for Kotlin, Python, Java and C++"
 date:   2021-09-16 19:39:44 +0530
-image: images/jackofalltrades.png
+image: images\jackofalltrades.png
 categories: [Coding]
 ---
 
