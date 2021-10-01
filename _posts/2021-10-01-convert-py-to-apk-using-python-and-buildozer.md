@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Convert Your .py Python Program into a .apk Android App (that doesn't crash!) | Kivymd, Buildozer Tutorial"
 date:   2021-08-27 09:00:44 +0530
-image: https://avionmission.github.io/assets/img/portfolio/cabin.png
+image: images\featured_image_for_ py_to_apk.png
 categories: [Python, App Development]
 ---
 You created an android app with python using Kivy or Kivymd, but it is still in .py format. How do you convert it into an installable .apk file that dose'nt crash for reasons you can't figure out and do it as quickly as possible? Don't worry, I got you covered. Read on.
