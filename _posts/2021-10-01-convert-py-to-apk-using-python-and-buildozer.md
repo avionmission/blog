@@ -21,36 +21,36 @@ Here is a simple step-by-step process for converting `.py` to `.apk`
 ## STEP 1: Use these pre-written commands
 Open this [colab notebook][notebook-link], and you will find some prewritten commands. But don't execute any command yet! Come back here after checking it out and wait for my commands ;-)
 
-<img src="images\october_2021\colab-buildozer-ss.png">
+<img src="https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss.png?raw=true">
 
 Start executing the commands one by one until you reach this command, don't execute it yet.
 
-<img src="images\october_2021\colab-buildozer-ss2.png">
+<img src="https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss2.png">
 
 ## STEP 2: Import your .py file (and assets you used in your app)
 After you import your .py file, rename it to `main.py` otherwise buildozer won't recognize which python program it has to work on.
 
-<img src="images\october_2021\colab-buildozer-ss3.png">
+<img src="https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss3.png">
 
 ## STEP 3: Run the "!buildozer" init command
 
 When you run the `!buildozer init` command, it will generate a `buildozer.spec` file, open it by double clicking on it. You can edit the contents of this file to change the package name of your app, application name, app icon, splash screen image, your baby's diapers and much more. Skim through it, see what changes you can make. But don't execute the `!buildozer -v android debug` command yet!! 
 
-<img src="images\october_2021\colab-buildozer-ss4.png">
+<img src="https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss4.png">
 
 ## STEP 4: Making sure your app doesn't crash!!
 I did all this and then I executed the next command, which is `!buildozer -v android debug`. It generated a .apk file, I happily transfered it to my phone and installed. But when I opened it, it crash. I tried debugging my app, I ventured into the deep forests of Stackoverflow and Quora discussions of people who were having similar problems, but nothing worked. It took me two days to figure it out. Here's how I solved the problem.
 
 In the contents of `buildozer.spec` file there is a requirements section. And along with `python3`,`kivy` and `kivymd` you have to add `pillow` to the requirements. Okay, now, What the hell is `pillow`!? I don't remember using any package named "pillow" in my code. Well, turns out, pillow or PIL (Python Image Library) is python package which kivymd depends on for stuff. So this is how the requirements section of your `buildozer.spec` should look like (bottom image):
 
-<img src="images\october_2021\colab-buildozer-ss5.png">
+<img src="https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss5.png">
 
 Don't forget to save your `buildozer.spec` file after making changes.
 
 ## STEP 5: Execute "!buildozer -v android debug"
 Run the `!buildozer -v android debug` and wait. It will probably take more than 15 minutes. It will ask you for confirmation by entering "y" one or two times in the middle of the process, so look out for that.
 
-<img src =  "images\october_2021\colab-buildozer-ss6.png">
+<img src =  "https://github.com/avionmission/blog/blob/main/images/october_2021/colab-buildozer-ss6.png">
 
 Once it's done all the processing, you'll see a new folder has appeared on the left hand side by the name `bin`. Inside the `bin` you will find a `.apk` file, transfer it in your phone. Install it, test it, and hopefully it doesn't crash. Your welcome.
 
