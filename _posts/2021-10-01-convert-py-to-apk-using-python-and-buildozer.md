@@ -23,7 +23,7 @@ Open this [colab notebook][notebook-link], and you will find some prewritten com
 
 <img src="\blog\images\october_2021\colab-buildozer-ss.png?raw=true">
 
-Start executing the commands one by one until you reach this command, don't execute it yet.
+Start executing the commands one by one until you reach this command `!buildozer init`, don't execute it yet.
 
 <img src="\blog\images\october_2021\colab-buildozer-ss2.png?raw=true">
 
