@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to Convert Your .py Python Program into a .apk Android App [that doesn't crash!] | Kivymd, Buildozer Tutorial"
+title:  "How to Convert Python Code into an Android .apk [that doesn't crash!] | Kivymd, Buildozer Tutorial"
 date:   2021-10-01 09:00:44 +0530
 image: images\featured_image_for_ py_to_apk.png
 categories: [Python, App Development]
