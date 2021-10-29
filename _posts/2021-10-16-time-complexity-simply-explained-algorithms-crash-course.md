@@ -8,6 +8,7 @@ excerpt: Time complexity and Big-O notation simply explained for beginners in al
 ---
 
 <img src="\blog\images\october_2021\time_complexity_and_Big_O_notation_thumbnail.png?raw=true">
+<em>Watch the video version of this post here: [https://www.youtube.com/watch?v=mBULc33aC_c&t=212s][video-link] </em>
 
 A lot of people who are selling courses teaching data structures and algorithms or teaching on youtube approach it like a giant homework assignment, a 3-6 month interview preparation, a huge chore that you are done with as soon as you can solve the 450 most common algorithm problems that appear in interviews. They are fine if that's why you're learning algorithms. Learning data structures and algorithms will make you a better programmer and problem solver regardless of what your motivation for learning it is.
 
@@ -44,3 +45,4 @@ As you can see, the time taken increases very slowly as the input size gets bigg
 In the next chapter, we will get our hands dirty with some python programming and learn your first algorithm, Binary Search. It is a simple, mind-blowing, and mind-blowingly-effective algorithm. You will also use your knowledge of Time complexity and Big-O notation in the next chapter and forever for the rest of your life (as long as you are working with algorithms).
 
 [logarithms-explained]: https://www.mathsisfun.com/algebra/logarithms
+[video-link]: https://www.youtube.com/watch?v=mBULc33aC_c&t=212s
