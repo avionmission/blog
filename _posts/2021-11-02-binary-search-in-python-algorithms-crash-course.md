@@ -4,12 +4,10 @@ title:  "Algorithms Crash Course #2: Arrays, Binary Search, and Simple Search in
 date:   2021-11-02 09:00:44 +0530
 image: images\november_2021\binary_search_in_python_thumbnail.png
 categories: [Data Structures and Algorithms]
-excerpt: Arrays and Binary Search Algorithm in Python. Welcome to the first second of Crash Course Algorithms.
 ---
+RECAP: In the [last chapter][last-chapter] we learned how we evaluate and compare the efficiency of algorithms and represent that efficiency using something called the Big-O notation. Here are some graphs of some common runtimes and their efficiency in Big-O notation.
 
 <img src="\blog\images\november_2021\binary_search_in_python_thumbnail.png?raw=true">
-
-RECAP: In the [last chapter][last-chapter] we learned how we evaluate and compare the efficiency of algorithms and represent that efficiency using something called the Big-O notation. Here are some graphs of some common runtimes and their efficiency in Big-O notation:
 
 Searching and Sorting are the two biggest obsessions of computer scientists and the reason for that is not that obvious until you learn about sorting algorithms and start seeing them everywhere. Google, the biggest tech giant of our age, was able to crush its competitors because it has the best sorting algorithm that takes millions of web pages and sorts them out so that you get exactly what you were looking for on the first page, and it does that in a matter of seconds. That's not an easy problem to solve. The same goes for the algorithms of Amazon, Netflix, and all the social media sites. Let's learn searching algorithms today, pull out your python, and by that, I mean whatever software you use for coding.
 

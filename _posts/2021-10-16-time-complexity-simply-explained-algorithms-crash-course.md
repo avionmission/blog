@@ -4,8 +4,8 @@ title:  "Algorithms Crash Course #1: Time Complexity & Big-O Notation Simply Exp
 date:   2021-10-16 09:00:44 +0530
 image: images\october_2021\time_complexity_and_Big_O_notation_thumbnail.png
 categories: [Data Structures and Algorithms]
-excerpt: Time complexity and Big-O notation simply explained for beginners in algorithms and data structures. Welcome to the first chapter of Crash Course Algorithms.
 ---
+Welcome to the first chapter of Crash Course Algorithms. Today we will learn about Time complexity and Big-O notation.
 
 <img src="\blog\images\october_2021\time_complexity_and_Big_O_notation_thumbnail.png?raw=true">
 <em>Watch the video version of this post here: [https://www.youtube.com/watch?v=mBULc33aC_c&t=212s][video-link] </em>
