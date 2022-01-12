@@ -112,7 +112,7 @@ a {
 
   &:hover {
     // color: $text-color;
-    color: aquamarine;
+    color: rgb(49, 121, 97);
     text-decoration: none;
   }
 
@@ -152,8 +152,7 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
-  // background-color: #eef;
-  background-color: #1D1F20;
+  background-color: #eef;
 }
 
 code {
