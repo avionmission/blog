@@ -109,6 +109,7 @@
 /**
  * Site footer
  */
+
 .site-footer {
   border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
@@ -123,7 +124,8 @@
 .social-media-list {
   list-style: none;
   margin-left: 0;
-  display: inline;
+  display: inline-block;
+  position: relative
 }
 
 .footer-col-wrapper {
