@@ -21,7 +21,7 @@ You can watch the full lecture on youtube: [https://www.youtube.com/watch?v=YKfB
     val isAnswerCorrect:Boolean = if (isLeftButtonSelected) leftNum > rightNum else rightNum > leftNum
     ```
     
-- Here’s the complete code for the simple app that we didn’t finish in the last lecture: [https://github.com/rpandey1234/BiggerNumberWWCode](https://github.com/rpandey1234/BiggerNumberWWCode)
+- Here’s the complete code for the simple app that we didn’t finish in the last lecture: [BiggerNumberWWCode](https://github.com/rpandey1234/BiggerNumberWWCode)
 - In Android Studio, creat a File > New > New Project > Empty Activity. This will create a project which does not create an android app but allows us to work with just Kotlin code.
 
 ### Hello World

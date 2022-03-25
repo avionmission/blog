@@ -1,0 +1,18 @@
+11/03/2022
+More Blogposts in `All About Android` Course:
+    1. OOP for Android Developer: Important Concepts Explained
+        - Interfaces
+        - Abstract Classes
+        - Inheritance
+        - Visibility (public/private/package)
+        - Exceptions
+        - try/catch
+    2. Ultimate Guide to Android Basics: Activites, Layouts, Project Structure
+        - Ids, relations
+        - dp/sp measurements in xml
+        - Activity LifeCycle
+        - onClickListner, findViewById, view-binding
+    3. Event-driven programs vs Procedural Programs: Must Know for Android Developers
+    4. Intents Explained: Android Development 101
+    5. Android Components Explained: Activity, Services, Recievers, Providers
+    6. 
