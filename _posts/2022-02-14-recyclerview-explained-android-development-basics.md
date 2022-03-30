@@ -223,8 +223,8 @@ Then add items to this list, enough items to make it scrollable, which will be i
 Open `activity_main.xml` and you will notice we had set the id of our parent element `RecyclerView` to be `contactList`. We will reference our recycler view `contactList` and set it's adapter and `LayoutManager`:
 
 ```kotlin
-        songsList.adapter = MyAdapter(songObjects)
-        songsList.layoutManager = LinearLayoutManager(this)
+        ContactList.adapter = MyAdapter(myContacts)
+        ContactList.layoutManager = LinearLayoutManager(this)
 ```
 
 `layoutManager` is responsible for measuring and positioning item views within a RecyclerView, it lays out the items in a grid.

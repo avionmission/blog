@@ -8,11 +8,33 @@ More Blogposts in `All About Android` Course:
         - Exceptions
         - try/catch
     2. Ultimate Guide to Android Basics: Activites, Layouts, Project Structure
+        - Project Structure
+        - Activites and Layouts
         - Ids, relations
         - dp/sp measurements in xml
         - Activity LifeCycle
         - onClickListner, findViewById, view-binding
     3. Event-driven programs vs Procedural Programs: Must Know for Android Developers
     4. Intents Explained: Android Development 101
-    5. Android Components Explained: Activity, Services, Recievers, Providers
-    6. 
+    5. Android Components Explained: Android Development 101
+        - Activity
+        - Services
+        - Recievers
+        - Providers
+    6. RecyclerView Explained Step-by-Step: Android Development 101
+    7. Build a Task List App in Android Studio (with Kotlin): Master Android Development
+
+Youtube video ideas (web development):
+1. JavaScript fundamentals before learning React.
+    - Based on tweet by @nachoiiacovino (https://twitter.com/nachoiacovino/status/1361362487820566531)
+    - let and const
+    - Functions
+    - Template strings
+    - map and filter
+    - Array destructuring
+    - Object destructuring
+    - Conditional ternary operator
+2. The first step to getting into web3 development: Understanding the Bitcoin Whitepaper
+3. Understanding the Ethereum Whitepaper
+4. Before getting into Web3: Learn JavaScript Fundamentals in One Video !
+5. Before getting into Web3: Learn ReactJS in One Video !
