@@ -49,6 +49,14 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+defaults:
+ # _posts
+     - scope:
+         path: ""
+         type: posts
+     values:
+         autoads: true
+
 # Google Analytics
 google_analytics: UA-209087094-1
 
