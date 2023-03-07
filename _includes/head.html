@@ -15,16 +15,14 @@
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="shortcut icon" type="image/png" href="favicon.ico">
-  {% if page.autoads %}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079200617314580"
-    crossorigin="anonymous"></script>
-    <script>
-          (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-2079200617314580",
-              enable_page_level_ads: true
-          });
-    </script>
-  {% endif %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2079200617314580"
+  crossorigin="anonymous"></script>
+  <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2079200617314580",
+            enable_page_level_ads: true
+        });
+  </script>
   {%- feed_meta -%}
   {% if site.google_analytics and jekyll.environment == 'production' %}
   {% include analytics.html %}
