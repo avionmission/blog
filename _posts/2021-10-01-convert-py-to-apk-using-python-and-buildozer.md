@@ -43,6 +43,8 @@ When you run the `!buildozer init` command, it will generate a `buildozer.spec` 
 ## STEP 4: Making sure your app doesn't crash!!
 I did all this and then I executed the next command, which is `!buildozer -v android debug`. It generated a .apk file, I happily transfered it to my phone and installed. But when I opened it, it crash. I tried debugging my app, I ventured into the deep forests of Stackoverflow and Quora discussions of people who were having similar problems, but nothing worked. It took me two days to figure it out. Here's how I solved the problem.
 
+{% include adunit2.html %}
+
 In the contents of `buildozer.spec` file there is a requirements section. And along with `python3`,`kivy` and `kivymd` you have to add `pillow` to the requirements. Okay, now, What the hell is `pillow`!? I don't remember using any package named "pillow" in my code. Well, turns out, pillow or PIL (Python Image Library) is python package which kivymd depends on for stuff. So this is how the requirements section of your `buildozer.spec` should look like (bottom image):
 
 <img src="\blog\images\october_2021\colab-buildozer-ss5.png?raw=true">
