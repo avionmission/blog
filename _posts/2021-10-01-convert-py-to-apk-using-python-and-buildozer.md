@@ -11,7 +11,7 @@ You created an android app with python using Kivy or Kivymd, but it is still in 
 
 I created a [simple rock-paper-scissor app][project1] with python using the kivy and [kivymd][kivymd-docs] packages (you can check out it's code [here][project1-code]). And then I went on a frustating journey of trying to convert it into an installable android app that doesn't crash as soon as you open it. I did it. In this post I'll simplify the process for you and how to make sure your app dose not crash.
 
-{% includes adunit1 %}
+{% include adunit1.html %}
 
 If you have no experience with Kivy or Kivymd, you can get started with this [tutorial][tutorial-link] which teaches you to create a simple application in 9 minutes.
 But even though the apps that you create using python and kivymd look great and have material design. They are still in `.py` format. So how do you convert your python programs into installable `.apk` files?
