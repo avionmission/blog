@@ -203,6 +203,9 @@ GEM
       jekyll-seo-tag (~> 2.0)
     jekyll-titles-from-headings (0.5.1)
       jekyll (~> 3.3)
+    jekyll-toc (0.16.1)
+      jekyll (>= 3.8)
+      nokogiri (~> 1.10)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.10.2)
@@ -222,7 +225,7 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    nokogiri (1.12.4-x64-mingw32)
+    nokogiri (1.14.2-x64-mingw32)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -230,7 +233,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
-    racc (1.5.2)
+    racc (1.6.2)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -273,6 +276,8 @@ DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.11.0)
   jekyll-sitemap
+  jekyll-toc
+  nokogiri (~> 1.14, >= 1.14.2)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
