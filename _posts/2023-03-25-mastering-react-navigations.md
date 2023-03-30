@@ -128,8 +128,6 @@ In the above code, we import the createStackNavigator function from React Naviga
 
 You can run the app using the command `npx expo start` and it should work perfectly.
 
-{% include adunit1.html %}
-
 ## 2. Navigation Drawer in React Native
 <img src="\blog\images\2023\DrawerNavigation.gif">
 
@@ -179,7 +177,6 @@ If you are getting any errors, it is possible you're missing some dependencies o
 ```bash
 npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
-{% include adunit2.html %}
 
 ## 3. Bottom Navigation Bar
 <img src="\blog\images\2023\TabNavigation.gif">

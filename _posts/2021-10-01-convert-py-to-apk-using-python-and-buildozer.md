@@ -11,8 +11,6 @@ You created an android app with python using Kivy or Kivymd, but it is still in 
 
 I created a [simple rock-paper-scissor app][project1] with python using the kivy and [kivymd][kivymd-docs] packages (you can check out it's code [here][project1-code]). And then I went on a frustating journey of trying to convert it into an installable android app that doesn't crash as soon as you open it. I did it. In this post I'll simplify the process for you and how to make sure your app dose not crash.
 
-{% include adunit1.html %}
-
 If you have no experience with Kivy or Kivymd, you can get started with this [tutorial][tutorial-link] which teaches you to create a simple application in 9 minutes.
 But even though the apps that you create using python and kivymd look great and have material design. They are still in `.py` format. So how do you convert your python programs into installable `.apk` files?
 
@@ -42,8 +40,6 @@ When you run the `!buildozer init` command, it will generate a `buildozer.spec` 
 
 ## STEP 4: Making sure your app doesn't crash!!
 I did all this and then I executed the next command, which is `!buildozer -v android debug`. It generated a .apk file, I happily transfered it to my phone and installed. But when I opened it, it crash. I tried debugging my app, I ventured into the deep forests of Stackoverflow and Quora discussions of people who were having similar problems, but nothing worked. It took me two days to figure it out. Here's how I solved the problem.
-
-{% include adunit2.html %}
 
 In the contents of `buildozer.spec` file there is a requirements section. And along with `python3`,`kivy` and `kivymd` you have to add `pillow` to the requirements. Okay, now, What the hell is `pillow`!? I don't remember using any package named "pillow" in my code. Well, turns out, pillow or PIL (Python Image Library) is python package which kivymd depends on for stuff. So this is how the requirements section of your `buildozer.spec` should look like (bottom image):
 

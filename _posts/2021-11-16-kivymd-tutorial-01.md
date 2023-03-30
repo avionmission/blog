@@ -11,8 +11,6 @@ excerpt: In this tutorial series you will build an Instagram clone using Python.
 
 The best way to learn any framework or tool is to learn by building something. Kivy and kivymd are no different. You can use these tools to create android apps and IoS apps using Python programming language. In this tutorial, we will learn kivy and kivymd by making an Instagram Clone. So let's begin. But before that make sure you have kivy and kivymd installed. If you use PyCharm IDE you will find the "Python Packages" section down at the bottom, you go there and search for whatever packages you want to install and install them directly.
 
-{% include adunit1.html %}
-
 Start by creating a new project in PyCharm and create a new `.py` file named `main.py`. This is entry point of your application which will branch to other screens and pages. 
 
 ## Part 1: The Basics of KivyMD
@@ -77,8 +75,6 @@ But we have not imported `Window` so add this in the beginning of your code:
 {% highlight python %}
 from kivy.core.window import Window
 {% endhighlight %}
-
-{% include adunit2.html %}
 
 ## Part 2: Designing Appbar, Modifying text, icon buttons and Box Layout.
 
@@ -242,8 +238,6 @@ We added two `MDIconButton` widgets and set their icon-type. Now if you run your
 <img src="\blog\images\november_2021\toolbar_done_kivymdpng.png?raw=true">
 
 We want our toolbar on top of the screen, it will go on top after we add the add other components below it, so don't worry about it.
-
-{% include adunit3.html %}
 
 Before we do anything else let's move our app bar under another `MDBoxLayout` widget (we are going to add more Boxes which will contain stories tab and posts etc):
 
