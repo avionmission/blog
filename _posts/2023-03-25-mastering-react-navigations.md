@@ -22,9 +22,13 @@ Let's use the Stack Navigator to create a navigation flow between two screens in
 
 ### Step 1: Set Up a New React Native Project
 
-First, create a new React Native project using the following command (this is the command i pref`enter code here`er to use):
+First, create a new React Native project using the following command (this is the command i prefer to use):
 
-    npx create-expo-app NavigationExamples
+```bash
+npx create-expo-app NavigationExamples
+```
+
+
 This will create a new project called NavigationExample in your current directory.
 
 ### Step 2: Install Dependencies.
