@@ -263,3 +263,5 @@ Finally, the `Ionicons` component is used to render the selected icon with the a
 With this knowledge, you'll be able to create navigation menus that are flexible, easy to use, and intuitive for your users. We hope that this article has provided you with the tools you need to create great navigation menus for your React Native apps.
 
 If you have any questions or comments about this article, please leave them in the comment section below. And don't forget to [follow me on twitter](https://twitter.com/avionmission) for more tips and tutorials on React Native development. Happy coding!
+
+*If you want me to turn your app idea into a fully functional MVP using React Native, don't hesitate to reach out! Contact me at* [***avionmission@gmail.com***](mailto:avionmission@gmail.com) *to discuss how I can help you bring your vision to life.*
