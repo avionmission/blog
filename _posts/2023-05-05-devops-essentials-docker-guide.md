@@ -9,7 +9,11 @@ Welcome to the first chapter of the series ***DevOps Essentials***, where we wil
 
 This series is specifically designed to help students and developers who are new to DevOps gain a solid understanding of all the essential Cloud Native tools.
 
-**Throughout this series, I plan to cover everything you need to learn to master DevOps, from the basics of Docker & Kubernetes to more advanced topics like CI/CD, Service Mesh, Infrastructure Monitoring, and more.** Make sure to [subscribe to our newsletter](https://avionmission.hashnode.dev/newsletter) so you don't miss an episode. Let's Begin!
+**Throughout this series, I plan to cover everything you need to learn to master DevOps, from the basics of Docker & Kubernetes to more advanced topics like CI/CD, Service Mesh, Infrastructure Monitoring, and more.** 
+
+Make sure to [subscribe to our newsletter](https://avionmission.hashnode.dev/newsletter) so you don't miss an episode. Let's Begin!
+
+<img src="\blog\images\2023\Docker-tutorial-cover.png">
 
 ## The Story of Docker
 
