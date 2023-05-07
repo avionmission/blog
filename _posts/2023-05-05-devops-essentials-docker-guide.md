@@ -21,7 +21,7 @@ Instead of starting with a definition of Docker, let's start with understanding 
 
 In the early days of software development, building and running applications on different computers was a major challenge. **Developers would often encounter issues with compatibility and system dependencies, which would take hours, if not days, to resolve.** Moreover, setting up the servers and computers that hosted the applications was a tedious and time-consuming process.
 
-Before the advent of Docker and containerization, when developers worked they often struggled and had frustration related to dependency and environment conflicts.
+Before the advent of Docker and containerization, when developers worked together they often struggled and had frustration related to dependency and environment conflicts.
 
 <img src="\blog\images\2023\docker-meme.png">
 
