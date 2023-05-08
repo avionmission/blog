@@ -20,6 +20,8 @@ It provides a solid foundation for web development without imposing too many con
 
 Let's dive into code, and actually show you how simple it is to set up a Flask backend for your react app!
 
+{% include ad1.html %}
+
 ## Creating a Flask + React App (step by step)
 
 ### **Step 1:** Setup your React frontend
@@ -130,6 +132,8 @@ Let's dive into code, and actually show you how simple it is to set up a Flask b
 * The response from the Flask API is parsed as JSON, and the accuracy value is extracted and stored in the `accuracy` state variable using the setAccuracy function. This triggers the update of the accuracy value. You can use this accuracy value in your react app, perhaps inside a &lt;p&gt; tag to display it.
     
 * That's it now you can write any kind of Python code, execute it in the backend, retrieve the code and use it in your React frontend!
+
+{% include ad2.html %}
     
 
 ### Important
