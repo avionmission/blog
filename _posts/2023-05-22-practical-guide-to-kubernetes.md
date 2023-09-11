@@ -89,7 +89,7 @@ If the Nginx container is functioning correctly, you should see the HTML content
 
 You can use the command `exit` to come out of interactive shell and back to the `controlplane` . But wait....what is a `controlplane` ???
 
-Perfect. Now that you have some hands-on experience with using Kubernetes. We should get into how it actually works, how to pods function and what does the Architecture of Kubernetes look like? Let's go. 🚀
+Perfect. Now that you have some hands-on experience with using Kubernetes. We should get into how it actually works, how do pods function and what does the Architecture of Kubernetes look like? Let's go. 🚀
 
 ## Kubernetes Architecture Explained
 
