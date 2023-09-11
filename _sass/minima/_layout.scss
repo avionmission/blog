@@ -2,8 +2,7 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-dark;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -37,6 +36,7 @@
   }
 
   .page-link {
+    font-family: Consolas !important;
     color: $text-color;
     line-height: $base-line-height;
 
@@ -46,7 +46,7 @@
     }
 
     &:hover{
-      color: rgb(30, 99, 76);
+      color: rgb(112, 242, 199);
     }
   }
 

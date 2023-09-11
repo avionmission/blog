@@ -3,7 +3,7 @@ layout: post
 title:  "How to use Python code in your React App (React + Flask Tutorial)"
 date:   2023-05-08 09:00:44 +0530
 image: images\2023\reactflasktutorialcover.png
-categories: [Python]
+categories: [Python, React]
 ---
 
 **Are you a Python developer transitioning into web development and missing the vast array of powerful Python libraries? If so, fear not, for there is a solution!** By using a Flask backend for your React application, you can seamlessly execute Python code on the server side and harness its functionality within your web app.

@@ -3,7 +3,7 @@ layout: post
 title:  "Mastering Navigation Menus in React Native: 3 Types You Must Know [With Examples]"
 date:   2023-03-25 09:00:44 +0530
 image: \images\2023\mastering-navigation-react-native.png
-categories: [React Native]
+categories: [Mobile Development, React]
 ---
 Designing a mobile app navigation menu can make a big impact on the user experience. A clear and intuitive navigation menu can help users easily find the information and features they need, while a confusing or cluttered menu can lead to frustration and user drop-off.
 

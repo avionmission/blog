@@ -3,7 +3,7 @@ layout: post
 title:  "Notes on Android Dev - Lecture 1 - Why/What/How Android"
 date:   2022-01-08 09:00:44 +0530
 image: \images\january_2022\notes_on_lecture_one_android.jpg
-categories: [App Development]
+categories: [Mobile Development]
 ---
 These are my notes on Lecture 1 of CS194A about the fundamentals of Android development taught by [Rahul Pandey][rahul-twitter]. 
 

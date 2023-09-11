@@ -26,6 +26,25 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
+  /* Styling scrollbars for all elements within the body */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #555 #222; /* Firefox */
+
+  /* WebKit-based browsers (Chrome, Safari) */
+  &::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #222; /* Color of the scrollbar track */
+  }
+
 }
 
 
@@ -112,7 +131,8 @@ a {
 
   &:hover {
     // color: $text-color;
-    color: rgb(49, 121, 97);
+    color: rgb(118, 240, 199);
+    transition: 1s;
     text-decoration: none;
   }
 
@@ -150,9 +170,9 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 1px solid $grey-color-dark;
   border-radius: 3px;
-  background-color: #eef;
+  background-color: transparent;
 }
 
 code {

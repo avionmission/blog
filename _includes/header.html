@@ -3,7 +3,7 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+    <a class="site-title" rel="author" href="https://avionmission.com">
       {%- if site.title-logo -%}
         <img src="{{site.title-logo | relative_url}}" alt="{{ site.title | escape}}"></img>
         {%- else _%}
@@ -23,8 +23,8 @@
         </label>
 
         <div class="trigger">
-          <a class="page-link" href="https://www.avionmission.com">Home</a>
-          <a class="page-link" href="https://www.avionmission.com/#portfolio">Portfolio</a>
+          <a class="page-link" href="https://avionmission.com/">Home</a>
+          <a class="page-link" href="{{site.baseurl}}/">Blog</a>
           <a class="page-link" href="{{site.baseurl}}/categories">Archive</a>
         </div>
       </nav>
