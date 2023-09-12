@@ -195,6 +195,20 @@
   @include relative-font-size(1.75);
 }
 
+.post-categories a {
+  font-size: medium;
+  background-color: #7b7b7b;
+  color: #d2d2d2;
+  border-radius: 8px;
+  margin-right: 8px;
+  padding: 4px 8px;
+}
+
+.post-categories a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;

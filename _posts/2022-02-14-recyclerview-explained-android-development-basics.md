@@ -3,7 +3,7 @@ layout: post
 title:  "RecyclerView Explained Step-by-Step: Android Development 101"
 date:   2022-02-14 09:00:44 +0530
 image: \images\march_2022\RecyclerView_explained.jpg
-categories: [App Development]
+categories: [Mobile Development]
 ---
 In this tutorial series, we will learn about all the essential and fundamental tools and concepts that you should know as an android developer. Today's topic is RecyclerView.
 
