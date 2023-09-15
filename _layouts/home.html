@@ -14,7 +14,30 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+
+  <div class="newsletter-embedding" style="text-align: center;">
+    <p style="font-size: medium; font-family: Verdana, Geneva, Tahoma, sans-serif;">Subscribe Now for a Weekly Dose of Tech Insights! 🤓🔮🤖👨‍💻</p>
+    <div id="custom-substack-embed" style="margin-bottom: 2rem;"></div>
+
+    <script>
+      window.CustomSubstackWidget = {
+        substackUrl: "avionmission.substack.com",
+        placeholder: "Email",
+        buttonText: "Subscribe",
+        theme: "custom",
+        colors: {
+          primary: "#2E8FF7",
+          input: "#001E29",
+          email: "#FFFFFF",
+          text: "#000000",
+        },
+        // Go to substackapi.com to unlock custom redirect
+      };
+    </script>
+    <script src="https://substackapi.com/widget.js" async></script>
+  </div>
+  
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>

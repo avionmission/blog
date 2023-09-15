@@ -6,6 +6,29 @@ layout: default
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <div class="newsletter-embedding" style="text-align: center;">
+    <p style="font-size: medium; font-family: Verdana, Geneva, Tahoma, sans-serif;">Subscribe Now for a Weekly Dose of Tech Insights! 🤓🔮👨‍💻</p>
+    <div id="custom-substack-embed" style="margin-bottom: 3rem;"></div>
+
+    <script>
+      window.CustomSubstackWidget = {
+        substackUrl: "avionmission.substack.com",
+        placeholder: "Email",
+        buttonText: "Subscribe",
+        theme: "custom",
+        colors: {
+          primary: "#2E8FF7",
+          input: "#001E29",
+          email: "#FFFFFF",
+          text: "#000000",
+        },
+        // Go to substackapi.com to unlock custom redirect
+      };
+    </script>
+    <script src="https://substackapi.com/widget.js" async></script>
+  </div>
+
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
