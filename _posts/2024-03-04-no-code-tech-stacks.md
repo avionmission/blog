@@ -7,7 +7,7 @@ categories: [No-Code]
 ---
 Here's the thing most developers who are anxious about AI are missing: *we're problem solvers, not just coders*.
 
-<img src="\blog\images\featured_image_for_ py_to_apk.png?raw=true">
+<img src="\blog\images\2024\nocodebros.png?raw=true">
 
 The co-founder of stack-overflow ([Jeff Atwood](https://twitter.com/codinghorror?lang=en)) famously said:
 
