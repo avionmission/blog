@@ -7,6 +7,8 @@ categories: [No-Code]
 ---
 Here's the thing most developers who are anxious about AI are missing: *we're problem solvers, not just coders*.
 
+<img src="\blog\images\featured_image_for_ py_to_apk.png?raw=true">
+
 The co-founder of stack-overflow ([Jeff Atwood](https://twitter.com/codinghorror?lang=en)) famously said:
 
 > the best code is no code at all. Every new line of code you willingly bring into the world is code that has to be debugged, code that has to be read and understood, code that has to be supported
