@@ -3,7 +3,6 @@ layout: post
 title:  "Algorithms Crash Course #2: Arrays, Binary Search, and Simple Search in Python"
 date:   2021-11-02 09:00:44 +0530
 image: images\november_2021\binary_search_in_python_thumbnail.png
-categories: [Data Structures and Algorithms]
 ---
 RECAP: In the [last chapter][last-chapter] we learned how we evaluate and compare the efficiency of algorithms and represent that efficiency using something called the Big-O notation. Here are some graphs of some common runtimes and their efficiency in Big-O notation.
 

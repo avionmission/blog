@@ -3,7 +3,7 @@ layout: post
 title:  "KivyMD Tutorial for Beginners: Create an Instagram Clone in Python!"
 date:   2021-11-16 09:00:44 +0530
 image: images\november_2021\kivymd_tut_insta_clone.png
-categories: [Python, Mobile Development]
+categories: [Python]
 excerpt: In this tutorial series you will build an Instagram clone using Python. We will learn kivy and kivymd libraries along the way.
 ---
 <img src="\blog\images\november_2021\kivymd_tut_insta_clone.png?raw=true">

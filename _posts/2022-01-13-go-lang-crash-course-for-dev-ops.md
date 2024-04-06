@@ -3,7 +3,6 @@ layout: post
 title:  "Golang Crash Course (The language of DevOps and Cloud)"
 date:   2022-01-13 09:00:44 +0530
 image: \images\january_2022\golang_crash_course_thumbnail.jpg
-categories: [DevOps]
 ---
 All the popular open-source DevOps tools are written in Go including Kubernetes, Prometheus, Grafana, Terraform, Vault, Hugo, CockroachDB, etc. In this post, I will explain the fundamentals of Golang. Which is not just print statements and if statements and for loops, we will go over that stuff quickly and then we will get to the real meat of Golang: Concurrency, goroutines and channels which I will try to explain to you in the simplest possible way. Let’s begin.
 

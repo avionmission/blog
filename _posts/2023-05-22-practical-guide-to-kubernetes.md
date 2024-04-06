@@ -3,7 +3,6 @@ layout: post
 title:  "The Practical Guide to Kubernetes ☸️ for Beginners (DevOps Essentials #2)"
 date:   2023-05-22 09:00:44 +0530
 image: \images\2023\kubernetes-practical-guide.png
-categories: [DevOps]
 ---
 Welcome to the second chapter of the series ***DevOps Essentials***, where we will take a practical hands-on approach to learning Kubernetes. I will also explain the architecture of Kubernetes and important concepts like Pods, Clusters, Nodes, and useful tools like Minikube and Killercoda.
 

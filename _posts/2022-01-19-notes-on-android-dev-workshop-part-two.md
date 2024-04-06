@@ -3,7 +3,6 @@ layout: post
 title:  "Notes on Android Dev - Lecture 2 - Intro to Kotlin"
 date:   2022-01-19 09:00:44 +0530
 image: \images\january_2022\notes_on_lecture_two_android.jpg
-categories: [App Development]
 ---
 These are my notes on Lecture 2 of CS194A by [Rahul Pandey][rahul-twitter] about the fundamental features of Kotlin language including Immutability, Type Inference and Nullability. 
 

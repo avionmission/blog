@@ -3,7 +3,6 @@ layout: post
 title:  "Beginners Guide to Docker 🐋 (DevOps Essentials #1) "
 date:   2023-05-05 09:00:44 +0530
 image: \images\2023\Docker-tutorial-cover.png
-categories: [DevOps]
 ---
 Welcome to the first chapter of the series ***DevOps Essentials***, where we will be exploring the fundamentals of Docker.
 
