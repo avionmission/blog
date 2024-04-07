@@ -15,7 +15,7 @@ Here's a cost comparison chart posted by [u/Mother-Ad-2559](https://www.reddit.c
 
 <img src="\blog\images\2024\cost-comparisons-between-openai-mistral-claude-and-gemini.webp?raw=true">
 
-So the most expensive one of these LLM APIs is GPT-4 with a cost of $10 for every 1 million "Tokens" and the cheapest one is Mistral tiny with $0.15/1M "tokens". What does that mean?
+Based on this table, the most expensive one of these LLM APIs is GPT-4 with a cost of $10 for every 1 million "Tokens" and the cheapest one is Mistral tiny with $0.15/1M "tokens". What does that mean?
 
 ### Tokens
 
@@ -31,7 +31,7 @@ For example, Mistral-7b API allows you to Input 1M tokens for 0.25$ and output 1
 
 <img src="\blog\images\2024\Mistral-pricing.png?raw=true">
 
-Clearly Mistral models are the most cost effective than gpt-4 and gpt-3.5 turbo. But what is the performance difference between them?
+Clearly Mistral models are the more cost effective than gpt-4 and gpt-3.5 turbo. But what is the performance difference between them?
 
 ### Mistral 7b vs GPT 3.5 Turbo
 
