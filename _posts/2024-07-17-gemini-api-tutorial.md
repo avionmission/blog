@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Build an AI UI Generator with Gemini API, Next.js (Tutorial)"
+title:  "How to use Gemini API (Next.js Tutorial)"
 date:   2024-07-17 07:00:44 +0530
-image: images\2024\gemini_nextjs.jpg
+image: images\2024\gemini_vscode.jpg
 categories: [AI]
 --- 
 %[https://www.youtube.com/watch?v=6CgeNtJwKFs] 
