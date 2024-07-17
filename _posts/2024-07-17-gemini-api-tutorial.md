@@ -5,11 +5,10 @@ date:   2024-07-17 07:00:44 +0530
 image: images\2024\gemini_vscode.jpg
 categories: [AI]
 --- 
-%[https://www.youtube.com/watch?v=6CgeNtJwKFs] 
-
 In my previous post, we built a UI generator from scratch using Next.js and the Gemini API. **This post is a quick guide on how to use the Gemini API in any of your Next.js apps**, in general.
 
 <img src="\blog\images\2024\gemini_vscode.jpg?raw=true">
+
 *Watch the video tutorial here: [https://www.youtube.com/watch?v=6CgeNtJwKFs](https://www.youtube.com/watch?v=6CgeNtJwKFs)*
 
 ### Step 1: Create a New project and install Gen AI SDK
