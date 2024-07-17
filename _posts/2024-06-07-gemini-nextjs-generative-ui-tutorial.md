@@ -12,7 +12,7 @@ This type of dynamic code generation can be the beginning of a new paradigm in s
 
 Here's an example of how our application will work:
 <img src="https://github.com/avionmission/ui-generator/raw/master/public/uigeneratordemo.png">
-*Watch the video tutorial here: [https://www.youtube.com/watch?v=IFQI3t89eO8&t=282s](https://www.youtube.com/watch?v=IFQI3t89eO8&t=282s)*
+*Watch the video tutorial here: [https://www.youtube.com/watch?v=IFQI3t89eO8](https://www.youtube.com/watch?v=IFQI3t89eO8)*
 
 Let's begin by creating a new Next.js project.
 
