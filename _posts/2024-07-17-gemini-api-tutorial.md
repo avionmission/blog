@@ -33,7 +33,7 @@ Go to [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/a
 
 Create a `.env` file in the root directory and store your API key:
 
-```json
+```
 GEMINI_API_KEY=[YOUR API KEY]
 ```
 
