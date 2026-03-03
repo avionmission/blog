@@ -162,11 +162,11 @@ h6 {
 a {
   color: var(--brand-color);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.7s ease;
 
   &:hover {
     color: var(--brand-color-hover);
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   .social-media-list &:hover {
