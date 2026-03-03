@@ -148,6 +148,11 @@
   }
 }
 
+[data-theme="dark"] .theme-toggle:hover {
+  background-color: #444;
+  border-color: var(--brand-color);
+}
+
 [data-theme="light"] .theme-toggle {
   .sun-icon {
     display: block;
