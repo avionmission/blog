@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-  border-bottom: 1px solid $grey-color-dark;
+  border-bottom: 1px solid var(--border-color);
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -19,7 +19,7 @@
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: var(--grey-color-dark);
   }
 }
 
@@ -38,7 +38,7 @@
   .page-link {
     font-family: 'Fira Code', monospace;
     font-weight: 400;
-    color: $text-color;
+    color: var(--text-color);
     line-height: $base-line-height;
     letter-spacing: -0.5px;
 
@@ -48,7 +48,7 @@
     }
 
     &:hover {
-      color: #2E8FF7;
+      color: var(--brand-color);
     }
   }
 
@@ -56,8 +56,8 @@
     position: absolute;
     top: 9px;
     right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     text-align: right;
 
@@ -80,7 +80,7 @@
       text-align: center;
 
       >svg {
-        fill: $grey-color-dark;
+        fill: var(--grey-color-dark);
       }
     }
 
@@ -107,6 +107,56 @@
   }
 }
 
+/**
+ * Theme toggle button
+ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin-left: 15px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  color: var(--text-color);
+
+  &:hover {
+    background-color: var(--grey-color-light);
+    border-color: var(--brand-color);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .moon-icon {
+    fill: currentColor;
+    display: block;
+  }
+
+  .sun-icon {
+    fill: none;
+    display: none;
+  }
+}
+
+[data-theme="light"] .theme-toggle {
+  .sun-icon {
+    display: block;
+  }
+
+  .moon-icon {
+    display: none;
+  }
+}
+
 
 
 /**
@@ -114,7 +164,7 @@
  */
 
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid var(--border-color);
   padding: $spacing-unit 0;
 }
 
@@ -139,7 +189,7 @@
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
-  color: $grey-color;
+  color: var(--grey-color);
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 }
@@ -207,8 +257,8 @@
 
 .post-categories a {
   font-size: medium;
-  background-color: #7b7b7b;
-  color: #d2d2d2;
+  background-color: var(--post-category-bg);
+  color: var(--post-category-text);
   border-radius: 8px;
   margin-right: 8px;
   padding: 4px 8px;
@@ -230,7 +280,7 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $grey-color;
+  color: var(--grey-color);
 }
 
 .post-link {

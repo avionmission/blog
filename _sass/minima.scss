@@ -16,6 +16,7 @@ body {
 
 $spacing-unit: 30px !default;
 
+// Dark theme (default) colors
 $text-color: #c2c2c2 !default;
 $background-color: #1c1e1f !default;
 // $brand-color:      #2a7ae2 !default;
@@ -48,6 +49,44 @@ $on-laptop: 800px !default;
 
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
+}
+
+// CSS Custom Properties for theme switching
+:root {
+  --text-color: #{$text-color};
+  --background-color: #{$background-color};
+  --brand-color: #{$brand-color};
+  --brand-color-hover: #{$brand-color};
+  --grey-color: #{$grey-color};
+  --grey-color-light: #{$grey-color-light};
+  --grey-color-dark: #{$grey-color-dark};
+  --scrollbar-thumb: #555;
+  --scrollbar-track: #222;
+  --border-color: #{$grey-color-dark};
+  --code-background: transparent;
+  --table-header-bg: #{lighten($grey-color-light, 3%)};
+  --table-row-even-bg: #{lighten($grey-color-light, 6%)};
+  --post-category-bg: #7b7b7b;
+  --post-category-text: #d2d2d2;
+}
+
+// Light theme
+[data-theme="light"] {
+  --text-color: #333;
+  --background-color: #fff;
+  --brand-color: #2563eb;
+  --brand-color-hover: #1d4ed8;
+  --grey-color: #666;
+  --grey-color-light: #eee;
+  --grey-color-dark: #999;
+  --scrollbar-thumb: #ccc;
+  --scrollbar-track: #f5f5f5;
+  --border-color: #ddd;
+  --code-background: #f8f8f8;
+  --table-header-bg: #f5f5f5;
+  --table-row-even-bg: #fafafa;
+  --post-category-bg: #e0e0e0;
+  --post-category-text: #555;
 }
 
 // Import partials.

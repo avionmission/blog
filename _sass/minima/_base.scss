@@ -28,8 +28,8 @@ figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
+  color: var(--text-color);
+  background-color: var(--background-color);
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -39,11 +39,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   /* Styling scrollbars for all elements within the body */
   scrollbar-width: thin;
   /* Firefox */
-  scrollbar-color: #555 #222;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   /* Firefox */
 
   /* WebKit-based browsers (Chrome, Safari) */
@@ -53,14 +54,14 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #555;
+    background-color: var(--scrollbar-thumb);
     /* Color of the scrollbar thumb */
     border-radius: 5px;
     /* Rounded corners for the thumb */
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #222;
+    background-color: var(--scrollbar-track);
     /* Color of the scrollbar track */
   }
 
@@ -159,18 +160,13 @@ h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: var(--brand-color);
   text-decoration: none;
-
-  // &:visited {
-  //  color: darken($brand-color, 15%);
-  // }
+  transition: color 0.2s ease;
 
   &:hover {
-    // color: $text-color;
-    color: rgb(152, 166, 243);
-    transition: 0.4s;
-    text-decoration: none;
+    color: var(--brand-color-hover);
+    text-decoration: underline;
   }
 
   .social-media-list &:hover {
@@ -187,8 +183,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: var(--grey-color);
+  border-left: 4px solid var(--grey-color-light);
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1.125);
   letter-spacing: -1px;
@@ -207,9 +203,9 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-dark;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
-  background-color: transparent;
+  background-color: var(--code-background);
 }
 
 code {
@@ -290,13 +286,13 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
+  color: var(--text-color);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
+  border: 1px solid var(--border-color);
 
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background-color: var(--table-row-even-bg);
     }
   }
 
@@ -306,12 +302,12 @@ table {
   }
 
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background-color: var(--table-header-bg);
+    border: 1px solid var(--border-color);
+    border-bottom-color: var(--grey-color-dark);
   }
 
   td {
-    border: 1px solid $grey-color-light;
+    border: 1px solid var(--border-color);
   }
 }

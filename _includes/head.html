@@ -9,6 +9,16 @@
     gtag('config', 'UA-209087094-1');
   </script>
 
+  <!-- Theme initialization - must run before page renders to prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,4 +29,5 @@
   {% if site.google_analytics and jekyll.environment == 'production' %}
   {% include analytics.html %}
   {% endif %}
+  <script src="{{ "/assets/theme.js" | relative_url }}"></script>
 </head>
