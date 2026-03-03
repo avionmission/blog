@@ -51,6 +51,9 @@ plugins:
 # Google Analytics
 google_analytics: UA-209087094-1
 
+# Ads toggle - set to true to enable, false to disable
+ads_enabled: false
+
 issues_repo: avionmission/blog
 
 default:
