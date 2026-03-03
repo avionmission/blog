@@ -49,6 +49,7 @@
 
     &:hover {
       color: var(--brand-color);
+      transition: color 0.3s ease;
     }
   }
 
@@ -256,12 +257,17 @@
 }
 
 .post-categories a {
-  font-size: medium;
   background-color: var(--post-category-bg);
   color: var(--post-category-text);
   border-radius: 8px;
   margin-right: 8px;
   padding: 4px 8px;
+  transition: all 0.3s ease;
+}
+
+.post-categories a:hover {
+  background-color: #333;
+  color: #fff;
 }
 
 .post-categories a:hover {
