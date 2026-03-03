@@ -4,77 +4,52 @@ layout: default
 
 <div class="home">
   <!-- Google fonts-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-  
-  <div class="newsletter-embedding" style="text-align: center;">
-    <!-- <h3><a href="https://blog.avionmission.com">Moving to Hashnode</a></h3>
-    <p >I’m freezing this blog and starting to post on my <a href="https://blog.avionmission.com">Hashnode</a> instead. The authoring experience is much more convenient for me there. Please follow me there, and check out the <a href="">Youtube channel</a> for video content.</p>
-    <p>You can subscribe to the <a href="https://blog.avionmission.com/newsletter">newsletter</a> to get my posts directly into your inbox.</p> -->
-    <div id="custom-substack-embed" style="margin-bottom: 2rem;"></div>
 
-    <script>
-      window.CustomSubstackWidget = {
-        substackUrl: "avionmission.substack.com",
-        placeholder: "Email",
-        buttonText: "Subscribe",
-        theme: "custom",
-        colors: {
-          primary: "#2E8FF7",
-          input: "#001E29",
-          email: "#FFFFFF",
-          text: "#000000",
-        },
-        // Go to substackapi.com to unlock custom redirect
-      };
-    </script>
-    <script src="https://substackapi.com/widget.js" async></script>
-  </div>
-
-  
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        <div class="post-categories" style="margin: 3% 0%;">
-          {% if post %}
-            {% assign categories = post.categories %}
-          {% else %}
-            {% assign categories = page.categories %}
-          {% endif %}
-          {% for category in categories %}
-          <a href="{{site.baseurl}}/categories/#{{category|slugize}}" style="" class="tags">{{category}}</a>
-          {% unless forloop.last %}&nbsp;{% endunless %}
-          {% endfor %}
-        </div>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      <div class="post-categories" style="margin: 3% 0%;">
+        {% if post %}
+        {% assign categories = post.categories %}
+        {% else %}
+        {% assign categories = page.categories %}
+        {% endif %}
+        {% for category in categories %}
+        <a href="{{site.baseurl}}/categories/#{{category|slugize}}" style="" class="tags">{{category}}</a>
+        {% unless forloop.last %}&nbsp;{% endunless %}
+        {% endfor %}
+      </div>
 
       {% if post.image %}
       <img src="{{site.baseurl}}/{{ post.image }}" style="margin-bottom: 2%;">
       {% endif %}
 
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+      {%- if site.show_excerpts -%}
+      {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
 </div>

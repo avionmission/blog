@@ -16,7 +16,7 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.11.0"
+  gem "jekyll-feed"
   gem "jekyll-sitemap"
   gem 'jekyll-toc'
   gem 'nokogiri', '~> 1.14', '>= 1.14.2'
