@@ -1,22 +1,21 @@
 <footer class="site-footer h-card">
-  <data class="u-url" href="{{ " /" | relative_url }}"></data>
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
-    <h2 class="footer-heading">Follow me on Socials!</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col" style="width: 100%; float: none;">
-        {%- include social.html -%}
+    <div class="footer-inner">
+      <div class="footer-social">
+        <h2 class="footer-heading">Follow me on Socials!</h2>
+        <div class="footer-social-icons">
+          {%- include social.html -%}
+        </div>
       </div>
-    </div>
 
-    <div class="footer-col-wrapper" style="margin-top: 10px;">
-      <div class="footer-col" style="width: 100%; float: none;">
+      <div class="footer-meta">
         {%- if site.email -%}
         <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
         {%- endif -%}
         {%- if site.copyright -%}
-        <span style="margin-left: 16px;">&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</span>
+        <span class="footer-copyright">&copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}</span>
         {%- endif -%}
       </div>
     </div>
