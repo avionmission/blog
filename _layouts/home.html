@@ -13,11 +13,11 @@ layout: default
 
   {{ content }}
 
-  {%- if site.posts.size > 0 -%}
+  {%- if paginator.posts.size > 0 -%}
 
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
-    {%- for post in site.posts -%}
+    {%- for post in paginator.posts -%}
     <li>
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -49,7 +49,58 @@ layout: default
     {%- endfor -%}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p>
+  {%- assign page_start = paginator.per_page | times: paginator.page | minus: paginator.per_page | plus: 1 -%}
+  {%- assign page_end = page_start | plus: paginator.per_page | minus: 1 -%}
+  {%- assign total_posts = site.posts | size -%}
+  {%- if page_end > total_posts -%}
+    {%- assign page_end = total_posts -%}
+  {%- endif -%}
+
+  {%- if paginator.total_pages > 1 -%}
+  <nav class="pagination" aria-label="Blog post pagination">
+    <p class="pagination-info">Showing {{ page_start }}&ndash;{{ page_end }} of {{ total_posts }} posts</p>
+
+    <div class="pagination-controls">
+      {%- if paginator.previous_page -%}
+      <a class="pagination-btn pagination-arrow" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Newer posts">
+        <span aria-hidden="true">&larr;</span> Newer
+      </a>
+      {%- else -%}
+      <span class="pagination-btn pagination-arrow is-disabled" aria-disabled="true">
+        <span aria-hidden="true">&larr;</span> Newer
+      </span>
+      {%- endif -%}
+
+      {%- capture page_links -%}
+      {%- for page_num in (1..paginator.total_pages) -%}
+        {%- if page_num == paginator.page -%}
+          <span class="pagination-page is-current" aria-current="page">{{ page_num }}</span>
+        {%- else -%}
+          {%- if page_num == 1 -%}
+            <a class="pagination-page" href="{{ '/' | relative_url }}">{{ page_num }}</a>
+          {%- else -%}
+            <a class="pagination-page" href="{{ site.paginate_path | replace: ':num', page_num | relative_url }}">{{ page_num }}</a>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- endcapture -%}
+
+      <span class="pagination-pages" role="navigation" aria-label="Page numbers">{{ page_links }}</span>
+
+      {%- if paginator.next_page -%}
+      <a class="pagination-btn pagination-arrow" href="{{ paginator.next_page_path | relative_url }}" aria-label="Older posts">
+        Older <span aria-hidden="true">&rarr;</span>
+      </a>
+      {%- else -%}
+      <span class="pagination-btn pagination-arrow is-disabled" aria-disabled="true">
+        Older <span aria-hidden="true">&rarr;</span>
+      </span>
+      {%- endif -%}
+    </div>
+  </nav>
+  {%- endif -%}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
 </div>
