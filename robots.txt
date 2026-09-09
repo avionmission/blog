@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://avionmission.github.io/blog/sitemap.xml
+Sitemap: https://avionmission.com/blog/sitemap.xml
