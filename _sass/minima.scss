@@ -65,8 +65,8 @@ $on-laptop: 800px !default;
   --scrollbar-track: #222;
   --border-color: #{$grey-color-dark};
   --code-background: transparent;
-  --table-header-bg: #{lighten($grey-color-light, 3%)};
-  --table-row-even-bg: #{lighten($grey-color-light, 6%)};
+  --table-header-bg: #2a2c2d;
+  --table-row-even-bg: #262829;
   --post-category-bg: #7b7b7b;
   --post-category-text: #d2d2d2;
 }
