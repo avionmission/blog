@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Maths for Neural Networks"
-date:   2026-08-31 07:00:44 +0530
+date:   2026-07-07 07:00:44 +0530
 image: images/2026/Math_for_AI_cover.jpg
 categories: [AI]
 ---
