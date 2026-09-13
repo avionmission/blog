@@ -15,25 +15,103 @@ Aims of "Coding a GPT from Scratch Series":
 
 <img src="\blog\images\2026\ch1_nn.jpg?raw=true">
 
-I think a good starting point for coding a GPT-like language model from scratch is to learn pytorch basics and deep learning fundamentals. So that's what all will do in the first part.
+I think a good starting point for coding a GPT-like language model from scratch is to learn **pytorch basics** and fundamentals of **neural networks**. So that's all will do in the first part before actually starting with a Language model implementation.
 
-What is Pytorch? Pytorch is a python library that allows us to create and manipulate "Tensors" which are array-like objects. They are a generalisation of vectors and matrices. So a single value (a scalar) is a 0-D tensor, vectors are 1-D tensors, matrices are 2-D tensors and so on. You can tell the dimensions of a tensor by how many indices you need to access a single element of a tensor.
+Pytorch is a python library that allows us to create and manipulate "Tensors" which are array-like objects.
 
-What makes pytorch tensors special and different from plain n-dimensional arrays is that it can use GPU to speed up computation and it keeps a track of the operations performed on tensors during model training, which we'll see when we get into the code. 
+Pytorch tensors are special and different from plain n-dimensional arrays for two reasons:
+
+1. They are implemented to be able to leverage GPUs for faster computations.
+2. Pytorch keeps track of the operations performed on tensors during model training, which we'll see when we get into the code.
 
 <img src="\blog\images\2026\tensors_eg.jpg">
 
-How is it relevant to what we are trying to do here, which is essentially to build a talking machine of sorts, an algorithm that takes in natural language as input and spits out words that sound like they make sense.
+How is a tensor library relevant to what we are trying to do here? Which is essentially to build a talking machine of sorts. An algorithm that takes in natural language as input and spits out words that make sense.
 
-Computers don't really understand words they understand and process numbers. So you have to convert or 'encode' those words into numbers that can be processed by our algorithm. When you give a prompt to chatgpt each word or token is encoded into numbers called word vectors. It goes through an algorithm performing some operations, mainly matrix multiplications, to get the desired output. 
+You see, computers don't really understand words they understand and process numbers. So you have to convert or *'encode'* those words into numbers that can be processed by our algorithm. 
 
-Our job is to create a “model” that knows the right operations to perform to get the desired output. By model we mean an algorithm that learns from data. The more data you train the model on the more its performance improves.
+When you give a prompt to chatgpt each word or token is encoded into numbers called *word vectors*. Your prompt goes through the model as a sequence of vectors, the model performs some operations on it, mainly matrix multiplications, to get the desired output which is another sequence of *word vectors*. 
+
+Our job is to create a “model” that knows the right operations to perform to get the desired output. By model we mean an algorithm that **learns from data**. The more data you train the model on the more its performance improves.
 
 <img src="\blog\images\2026\words_to_tensors.jpg">
 
 # Neural Networks
 
-Neural Networks is one such algorithm. Let’s get an example dataset before I explain how a neural network works.
+Neural Network is one such *learning algorithm*. 
+
+Neural networks are often represented by graphs that look like this:
+
+<img src="\blog\images\2026\fully_connected_nn.jpg">
+
+Just by looking at this graph you can guess the workings of a neural networks.
+
+The first layer of nodes have input values which are passed to the next layer of nodes. Each node is a computation performed on the value passed to it, the results of which are passed to the next layer of nodes. Which are then finally combined to get the output. That's why it's called a **"Computational Graph"** and the nodes in a neural network are called **Neurons** (*Note that the output dosent necessarily have to be a single value.*)
+
+These inner layers apart from the input and output are called "hidden layers".
+
+Let's take a simpler network, with just one hidden layer, to zoom in on the neurons and see what computation each neuron perform on the input.
+
+<img src="\blog\images\2026\simple-network.jpg">
+
+Each neuron is actually just a linear transformation. Multiply by a number (called weight), add another number (called bias).
+
+The input `x` is fixed, the outputs `y` is what the model needs to predict. The changeable parameters are the values of Ws and Bs (the weights and biases)
+
+Traning the neural network means tuning the values of the weights and bias until the model gets accurate outputs. "Learning" means the model the "learns" the values of weights and biases that describe the relationship between input and output with some accuracy.
+
+That's why another name for neural networks, a more informative name, is "Universal Function Approximator". It approximates the function that describes the relationship between x and y.
+
+But notice that this model only works if x and y have a linear relationship. Look what happens when we add these three linear equations and plot the graph between x and y. We will always get a straight line no matter what parameters we set:
+
+<img src = "\blog\images\2026\simple_network_plot.jpg">
+
+Adding a bunch of linear equations will only give you a linear equation. What if the relationship between x and y is non linear?
+
+This is where we use some special functions called activation functions, one of which is ReLU. ReLU has a very simple formula:
+
+```
+f(x) = max(x, 0)
+``` 
+
+It returns the input if it's positive else zero.
+
+See what happens when I apply ReLu function to each of the same three linear equations and graph them:
+<img src = "\blog\images\2026\plot_with_activation.jpg">
+
+Notice the three bends that we get this time. You can imagine for the right values of the parameters and by increasing the number of neurons, we can approximate any function between x and y, not matter how complex.
+
+Now you should be starting to see why neural networks are called "Universal Functions Approximators".
+
+The Activation Function,  helps us add non-linearity to our network.
+
+So each neuron in a neural network is linear transformation inside an activation function. That's all it is no matter how complex the network, a single neuron is actually very simple.
+
+I’ll show you another example, here the actual relationship between x and y was `x = x^3 + x^4`, shown by the red curve. I trained a neural network on a dataset of x and y values  which is represented by the blue line:
+`
+<img src="\blog\images\2026\function_approximation.jpg">
+
+Watch how the network starts as a straight line and slowly curves as the weights and bias values change till it takes the shape which approximates the curve that describes the actual relationship between x and y.
+
+## Backpropgation
+
+But what is the process of changing the weight and bias values? In other words what is the learning algorithm? So far we have only structure of a neural network.
+
+Here are the exact steps to make the network learn:
+
+1. First we need a dataset that contains input values with correspoding output values. Initially the weights and biases are given random values so our prediction `y` will be far from the correct outputs.
+2. Pass each row of the input through the network to get a prediction. This is called **Forward Pass**. Let's call the predicted value of y `predicted_y`.
+3. Calculate the error. You can do that by subtracting the actual y by `predicted_y`. This value will tell us how bad the network did. The function that tells us how bad the network did is called the **loss function**  An even better loss function would be the square of the difference between actual y and `predicted_y`. Because firstly, squaring ensures you always get positive value so we can focus on trying to get the loss value as close to zero as possible, and secondly it imposes a larger penalty when the model is wrong.
+4. We use this loss value to adjust our weights. By calculating the **derivative** of the loss function w.r.t to each weight and bias. A `derivative` or `gradient`, written as `dy/dx` is a function that tells you how much y changes for a very small change in x. In our case we need to compute dL/dw. So if the derivative is a positive value it means increasing the w, also increases L. If the derivative is a negative value it means increasing w leads to a decrease in L. **We can simply use this formula to adjust each weight**:
+```
+w_new = w_old - d(w_old)/dL
+```
+We can change the pace of the adjustment by multiplying a fraction such as 0.01 to the gradient. So the weight is adjusted slowly so that the training process is stable. This number is called the learning rate. This step is called **Gradient Descent**.
+5. We continue this process for each row until all the rows are processed, i.e the entire dataset is processed. This is one epoch. We usually train our model for many epochs.
+
+## Applying a Neural Network to the Housing Dataset
+
+Let's take an example dataset and train neural network on it using the Pytorch's deep learning utilities.
 
 ```python
 from sklearn.datasets import fetch_california_housing
@@ -45,61 +123,11 @@ data = fetch_california_housing(as_frame=True).frame
 data.head()
 ```
 
-This is a textbook example of a machine learning problem but a neural network can also be applied to it. Each row in this dataset gives you information about the houses in a particular area or block in California. If we get information about a new block (one that is not present in our dataset) can we predict its median house price with some accuracy?
+This is a textbook example of a machine learning problem but a neural network can also be applied to it. Each row in this dataset gives you information about the houses in a particular area or block in California. 
 
-Observe that we have 8 input columns, the last column `MedHouseVal` is the target that we have to predict. How do we use a Neural Network to create a model that can make this prediction?
+The problem statement is this: If you get information about a new block (one that is not present in our dataset) can we predict its median house price with some accuracy?
 
-Now look at this graph for a Neural Network:
-
-<img src="\blog\images\2026\fully_connected_nn.jpg">
-
-Data goes in the input nodes. Then the input is passed to these inner nodes which are called the “hidden layer” which are all combined to finally obtain the output which in our example is the Median house price of that area.
-
-So each node is a computation, let's take a simpler network to zoom in on the nodes and what computation is each node performing exactly.
-
-<img src="\blog\images\2026\simple-network.jpg">
-
-Suppose we have one input x and one output y. Each node is actually just a linear transformation. Multiply by a number (called weight), add another number (called bias). Scaling and offset.
-
-The input x, we know. Output y is what we have to obtain. But what are the values of weights `w1`, `w2` and biases `b1`,`b2` ? Initially they get random values so our prediction `y` will be way off. As we train the model on your dataset, the values of these weights and biases will change such that we get more and more accurate outputs. We’ll discuss the process by which we change these values in a minute but first i have to address what is missing in this model.
-
-This model only works if x and y have a linear relationship. Look what happens when we add these linear equations and plot the graph. We will always get a straight line no matter what the coefficients are:
-
-<img src = "\blog\images\2026\simple_network_plot.jpg">
-
-Adding a bunch of linear equations will only give you a linear equation. Each neuron in a neural network is a linear transformation.
-
-So how will our model learn when there is a non-linear relationship between input and output like in our example between x and y. This is where we use some special functions called activation functions, one of which is ReLU. ReLU has a very simple formula:
-
-```
-f(x) = max(x, 0)
-``` 
-
-Now see what happens when I apply ReLu function to each of the same three neurons and graph them:
-<img src = "\blog\images\2026\plot_with_activation.jpg">
-
-Notice the three bends that we get this time. So you can imagine for the right values of the coefficients and by increasing the number of neurons or using a different activation function, we can approximate any curved function between x and y.
-
-This is why another name for neural networks is “Universal Function Approximator”. So now we add the missing piece in our simple network. The Activation Function, which helps us add non-linearity to our network. Each neuron in a is just the input multiplied by a number called weight, added to a number called bias and the whole thing goes inside an activation function like ReLU.
-
-I’ll show you another example, here the actual relationship between x and y was x = x^3 + x^4, shown by the blue curve. I trained a neural network on a dataset of x and y values  which is represented by the red line:
-
-<img src="\blog\images\2026\function_approximation.jpg">
-
-Watch how the network starts as a straight line and slowly curves as the weights and bias values change till it takes the shape which approximates the curve that describes the actual relationship between x and y.
-
-Learning basically meanings changing the weight and bias values in the neurons until our function approximates the actual ground truth of the relationship between the input and output.
-
-What is the process of changing the weight and bias values, in other words what is the learning process? 
-
-Suppose we have a dataset which has thousands of x and y values. Here’s how the learning process (called gradient descent) works:
-- We go through each row in the data. This is called **Forward Pass**: Pass the input “x” through the network and you'll get a predicted value of y, let's call it `y_pred`. We need a function that tells us how wrong our model is, called the **loss function**. One of these functions is the Mean Squared Error `(y - y_pred)^2`. Why the square? Why not simply `y - y_pred`? Because firstly, squaring ensures you always get positive value so we focus on trying to get the loss value as close to zero as possible, and it imposes a larger penalty when the model is wrong.
-- We use this loss function to adjust our weights. By calculating the **derivative** of a weight w.r.t the loss function. You can think of a derivative as a function that tells you how much L changes for a small change in w.
-- We continue the process for each row until all the rows are processed, i.e the entire dataset is processed. This is one epoch, when we train the model on the entire dataset once. Model training often requires many epochs.
-
-## Applying a Neural Network to the Housing Dataset
-
-Back to the housing dataset. We got 8 input columns and 1 target column. Let’s separate them, split them into training and testing sets using helper functions from the `sklearn` library:
+Observe that we have 8 input columns, the last column MedHouseVal is the target that we have to predict. Let’s split the data into training and testing sets using helper functions from the `sklearn` library:
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -111,7 +139,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
     )
 ```
-We also need to scale the inputs. What is scaling? Let’s say you are predicting a person’s monthly expenditure based on his age and salary, now salary is in the range of 1000s while age is in the range of 20 to 60. So numerically salary has higher value so your model can start to give more weight to salary than age. Even though age is also an important predictor of a person’s expenditure. So it will be helpful to represent salary in a range of 0 to 1, 1 being 100,000 and age also in a range of 0 to 1, 1 being 100 years.
+We also need to scale the inputs. All the input values need to be brought to the same scale, so large numbers don't destabelize the learning process. We'll use another helper function for that.
 
 ```python
 # Scaling
@@ -122,7 +150,7 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 ```
 
-The last thing we need to do before implementing our Neural Network is to convert these into Tensors:
+The last thing we need to do before implementing our Neural Network is to convert these arrays into Tensors:
 
 ```python
 # Convert them into pytorch tensors
@@ -141,14 +169,15 @@ We’ll start by designing the network:
 ```python
 # Design the network
 
-input_dim = X_train.shape[1]
-
-W1 = torch.randn(input_dim, 12, requires_grad=True)
+# Hidden Layer 1
+W1 = torch.randn(8, 12, requires_grad=True)
 b1 = torch.zeros(12, requires_grad=True)
 
+# Hidden Layer 2
 W2 = torch.randn(12, 6, requires_grad=True)
 b2 = torch.zeros(6, requires_grad=True)
 
+# Output layer
 W3 = torch.randn(6, 1, requires_grad=True)
 b3 = torch.zeros(1, requires_grad=True)
 ```
@@ -205,15 +234,12 @@ for epoch  in range(epochs):
     print(f"Epoch: {epoch+1}, Loss: {loss.item()}, RMSE:{loss.item()**0.5}")
 
 ```
-`loss.backward()` computes the derivative of the loss function with respect to every weight and bias in the network and stores those derivatives in each parameter’s `.grad` attribute.
+`loss.backward()` computes the derivative of the loss function with respect to every weight and bias in the network and stores those derivatives in each parameter’s `.grad` attribute of the tensor.
 
 <img src = "\blog\images\2026\housing_eval.jpg">
 
-You can observe how the loss reduces in every epoch. The RMSE tells us how wrong our model is in the actual units of the data, so it can be interpreted that our model roughly makes an error of 69K when predicting the house prices. The performance can be improved a lot if use pytorch utilities, better optimizer and tune the hyper parameters. But the point of this exercise was to show the inner workings of a Neural Network.
+You can observe how the loss reduces in every epoch. The RMSE tells us how wrong our model is in the actual units of the data, so it can be interpreted that our model roughly makes an error of 69K when predicting the house prices. As far as regression models got its not bad, it sure sounds bad.
 
-**In the next part we will use this knowledge of neural networks in working with text data and make some progress in implementing a GPT-like language model!**
+The performance can be improved a lot if you use pytorch utilities, better optimizer and tune the hyper-parameters such as the learning rate. But the point of this exercise was to show the inner workings of a Neural Network.
 
-
-
-
- 
+**In the next part we will use this knowledge of neural networks in working with text data and make some progress in implementing our language model!** 
