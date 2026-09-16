@@ -6,7 +6,7 @@ image: images\2026\ch1_nn.jpg
 categories: [AI]
 --- 
 
-Aims of "Coding a GPT from Scratch Series":
+Aims of "Coding a GPT from Scratch" Series:
 1. Joy of programming (how do you make a talking machine??)
 2. Demystifying LLMs
 3. Getting good at Python and Pytorch
@@ -15,13 +15,13 @@ Aims of "Coding a GPT from Scratch Series":
 
 <img src="\blog\images\2026\ch1_nn.jpg?raw=true">
 
-I think a good starting point for coding a GPT-like language model from scratch is to learn **pytorch basics** and fundamentals of **neural networks**. So that's all will do in the first part before actually starting with a Language model implementation.
+I think a good starting point for coding a GPT-like language model from scratch is to learn **pytorch basics** and fundamentals of **neural networks**. So that's all will do in the first part before actually starting with the implementaion of our language model.
 
 Pytorch is a python library that allows us to create and manipulate "Tensors" which are array-like objects.
 
-Pytorch tensors are special and different from plain n-dimensional arrays for two reasons:
+Tensors are special and different from plain n-dimensional arrays for two reasons:
 
-1. They are implemented to be able to leverage GPUs for faster computations.
+1. They can use GPUs for faster computations.
 2. Pytorch keeps track of the operations performed on tensors during model training, which we'll see when we get into the code.
 
 <img src="\blog\images\2026\tensors_eg.jpg">
@@ -40,13 +40,13 @@ Our job is to create a “model” that knows the right operations to perform to
 
 Neural Network is one such *learning algorithm*. 
 
-Neural networks are often represented by graphs that look like this:
+A Neural network is often represented by a graph that looks like this:
 
 <img src="\blog\images\2026\fully_connected_nn.jpg">
 
 Just by looking at this graph you can guess the workings of a neural networks.
 
-The first layer of nodes have input values which are passed to the next layer of nodes. Each node is a computation performed on the value passed to it, the results of which are passed to the next layer of nodes. Which are then finally combined to get the output. That's why it's called a **"Computational Graph"** and the nodes in a neural network are called **Neurons** (*Note that the output dosent necessarily have to be a single value.*)
+The first layer of nodes have input values which are passed to the next layer of nodes. Each node is a computation performed on the values passed to it, the results of which are passed to the next layer of nodes. Which are then finally combined to get the output. That's why it's called a **"Computational Graph"** and the nodes in a neural network are called **Neurons** (*Note that the output dosent necessarily have to be a single value.*)
 
 These inner layers apart from the input and output are called "hidden layers".
 
@@ -87,7 +87,7 @@ The Activation Function,  helps us add non-linearity to our network.
 
 So each neuron in a neural network is linear transformation inside an activation function. That's all it is no matter how complex the network, a single neuron is actually very simple.
 
-I’ll show you another example, here the actual relationship between x and y was `x = x^3 + x^4`, shown by the red curve. I trained a neural network on a dataset of x and y values  which is represented by the blue line:
+I’ll show you another example, here the actual relationship between x and y was `y = x^3 + x^4`, shown by the red curve. I trained a neural network on a dataset of x and y values  which is represented by the blue line:
 `
 <img src="\blog\images\2026\function_approximation.jpg">
 
@@ -95,18 +95,18 @@ Watch how the network starts as a straight line and slowly curves as the weights
 
 ## Backpropgation
 
-But what is the process of changing the weight and bias values? In other words what is the learning algorithm? So far we have only structure of a neural network.
+But what is the process of changing the weight and bias values? In other words what is the learning process itself? So far we have only seen the structure of a neural network, let's take a look at it's working.
 
 Here are the exact steps to make the network learn:
 
 1. First we need a dataset that contains input values with correspoding output values. Initially the weights and biases are given random values so our prediction `y` will be far from the correct outputs.
 2. Pass each row of the input through the network to get a prediction. This is called **Forward Pass**. Let's call the predicted value of y `predicted_y`.
-3. Calculate the error. You can do that by subtracting the actual y by `predicted_y`. This value will tell us how bad the network did. The function that tells us how bad the network did is called the **loss function**  An even better loss function would be the square of the difference between actual y and `predicted_y`. Because firstly, squaring ensures you always get positive value so we can focus on trying to get the loss value as close to zero as possible, and secondly it imposes a larger penalty when the model is wrong.
-4. We use this loss value to adjust our weights. By calculating the **derivative** of the loss function w.r.t to each weight and bias. A `derivative` or `gradient`, written as `dy/dx` is a function that tells you how much y changes for a very small change in x. In our case we need to compute dL/dw. So if the derivative is a positive value it means increasing the w, also increases L. If the derivative is a negative value it means increasing w leads to a decrease in L. **We can simply use this formula to adjust each weight**:
+3. Calculate the error. You can do that by subtracting the actual y by `predicted_y`. This value will tell us how bad the network did. The function that tells us how bad the network did is called the **loss function**  A better loss function would be the square of the difference between actual y and `predicted_y`. Because firstly, squaring ensures you always get positive value so we can focus on trying to get the loss value as close to zero as possible, and secondly it imposes a larger penalty when the model is wrong.
+4. We use this loss value to adjust our weights. By calculating the **derivative** of the loss function w.r.t to each weight and bias. A `derivative` or `gradient`, written as `dy/dx` is a function that tells you how much y changes for a very small change in x. In our case we need to compute dL/dw. So if the derivative is a positive value it means increasing the w, also increases L. If the derivative is a negative value it means increasing w leads to a decrease in L. **So we can simply use this formula to adjust each weight after a forward pass:**
 ```
 w_new = w_old - d(w_old)/dL
 ```
-We can change the pace of the adjustment by multiplying a fraction such as 0.01 to the gradient. So the weight is adjusted slowly so that the training process is stable. This number is called the learning rate. This step is called **Gradient Descent**.
+We can change the pace of the adjustment by multiplying a fraction such as 0.01 to the gradient. This helps to adjust the weight slowly and ensure the learning process is stable. This number is called the learning rate.
 5. We continue this process for each row until all the rows are processed, i.e the entire dataset is processed. This is one epoch. We usually train our model for many epochs.
 
 ## Applying a Neural Network to the Housing Dataset
