@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Coding a GPT from Scratch (PART 1: Neural Networks)"
-date:   2026-08-31 07:00:44 +0530
+date:   2026-09-20 07:00:44 +0530
 image: images\2026\ch1_nn.jpg
 categories: [AI]
 --- 
@@ -13,7 +13,7 @@ Aims of "Coding a GPT from Scratch" Series:
 4. Learning Math concepts as abstractions to be used
 
 
-<img src="\blog\images\2026\ch1_nn.jpg?raw=true">
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/iFepeIP7ok4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I think a good starting point for coding a GPT-like language model from scratch is to learn **pytorch basics** and fundamentals of **neural networks**. So that's all will do in the first part before actually starting with the implementaion of our language model.
 
